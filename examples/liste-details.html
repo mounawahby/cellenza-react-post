@@ -19,8 +19,10 @@
             color:grey;
             text-decoration: blink;
             text-decoration: line-through;
-
-        }
+            }
+            .img{
+                 size: 10px;
+            }
    
     </style>
 </head>
@@ -28,7 +30,7 @@
 
 <body>
 <script type="text/javascript">
-
+//la variable letters contient les noms, images et citations des personnages Star Wars
         var letters =
  [{
 'author': 'Princess Leila',
@@ -85,19 +87,18 @@
 <!--génération d'une chaine de string aléatoire-->
     <img src="image/header.png" width=250px/>
     <h4><mark>GENERATE A RANDOM STRING BASED ON A STAR WARS CHARACTER</mark><h4/>
-
-
-  <img src="image/2.png" width=50px/>
-
-  <div id="root1"></div>
+    <img src="image/2.png" width=50px/>
+    <div id="root1"></div>
+  <!--script node de type text/jsx--> 
+  <!--stringofC permet de générer  une chaine de caractère aléatoire-->
   <script type="text/jsx">
-  var stringofC = function stringofC(lengthChar)
+    var stringofC = function stringofC(lengthChar)
     {
         var rand = new Array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9","@","#","/");
 
         var stringofC ='';
 
-        for(i = 0; i < lengthChar; i++)
+        for(k = 0; k < lengthChar; k++)
 
         {
 
@@ -139,6 +140,7 @@
 </body>
 
 <body>
+<!--Affichage des citations selon le logo choisi-->
 <h4><mark>CLICK ON A LOGO TO DISPLAY A QUOTE</mark><h4/>
  <img src="image/2.png" width=50px/>
 <div id="root4"></div>
@@ -186,7 +188,7 @@
 
             return (<div className={classname}>
                 {this.props.itemValue.author}
-                <img src={this.props.itemValue.img}  onClick={this.handleClick}/>
+                <img src={this.props.itemValue.img} height="52" width="52"  onClick={this.handleClick}/>
                 </div>);
         },
 
@@ -215,12 +217,13 @@
 </body>
 
   <body> 
-  
- <p><mark>PICK A QUOTE TO SEE WHO SAID IT</mark></p>
-  <img src="image/2.png" width=50px/>
-  <div id="root3"></div>
-  <script type="text/jsx">
-  var Tree3 =  React.createClass({
+  <!--Affichage des citations selon le nom de l'auteur selectionné-->
+  <p><mark>PICK A QUOTE TO SEE WHO SAID IT</mark></p>
+     <img src="image/2.png" width=50px/>
+     <div id="root3"></div>
+    
+     <script type="text/jsx">
+    var Tree3 =  React.createClass({
 
         render : function () {
 
